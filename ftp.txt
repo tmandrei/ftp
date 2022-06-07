@@ -1,0 +1,8 @@
+sudo apt install vsftpd
+sudo mv /etc/vsftpd.conf /etc/vsftpd.conf_orig
+sudo nano /etc/vsftpd.conf
+write_enable=YES
+sudo ufw allow from any to any port 20,21,10000:10100 proto tcp
+sudo systemctl restart vsftpd
+sudo useradd -m ftpuser
+sudo passwd ftpuser
